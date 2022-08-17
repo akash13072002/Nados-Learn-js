@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Say Hello</button>
+
+    
+
+    <script>
+      //Q1 on Clicking the Button append hello to the page
+
+       // this method is used to identify anbnd select the Element
+      let btn =document.querySelector("button")
+
+      btn.addEventListener("click",function(){
+          console.log('hello');
+          let divEle=document.createElement("div");
+ //create Element lets you Create a new Element in the DOM
+
+          divEle.innerText="hello";
+           // inner text is a property by which you can access and add or remove Text inisde an element
+
+          let bodyEle=document.querySelector("body");
+          bodyEle.appendChild(divEle);
+           // this method allows you to add new Children inside your selected element
+      });
+      
+    </script>
+  </body>
+</html>

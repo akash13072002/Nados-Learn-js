@@ -1,0 +1,16 @@
+SQL> CREATE TABLE emp(id INT PRIMARY KEY, name VARCHAR(10), 
+age INT, salary INT);
+
+SQL> INSERT INTO emp values(1, 'Akash', 21, 34000);
+SQL> INSERT INTO emp values(2, 'Satyam', 30, 21000);
+SQL> INSERT INTO emp values(3,'ankit', 40, 53000);
+SQL> INSERT INTO emp values(4,'manav', 66, 42000);
+SQL> INSERT INTO emp values(5,'harsh', 38, 46000);
+
+
+SQL> SELECT * from employee;
+SQL> SELECT AVG(salary) "Average Salary" FROM employee;
+SQL> SELECT COUNT(*) FROM emp;
+SQL> SELECT MAX(age) FROM emp;
+SQL> SELECT MIN(age) FROM emp;
+SQL> SELECT SUM(salary) FROM emp;

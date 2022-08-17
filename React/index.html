@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // let ele = document.createElement('h1');
+        // ele.innerText = 'hello';
+
+        // let root = document.getElementById('root');
+        // root.appendChild(ele);
+
+        //  REACT
+
+        // let ele=React.createElement('h1',{
+        // children:['Hello',' Bye']
+        // })
+        // ReactDOM.render(ele,document.getElementById('root'))
+        // first letter of component is always capital
+        function Child1({name,age,marks}) {
+        return (
+          <div>
+            <h1> Hello My name is {name} </h1>
+            <h4> Age is {age}</h4>
+            <h4> Marks obtained {marks}/100</h4>
+          </div>
+        );
+      }
+      function Child2({color="white" }) {
+        return (
+          <div>
+            <h1> cat color is {color}</h1>
+          </div>
+        );
+      }
+
+      function Parent() {
+        return (
+          <>
+            <Child1 name='Akash' age='21' marks='85'/>
+            <Child1 name ='Rohit' age='23' marks='83' />
+            <Child2 color='blue'/>
+          </>
+        );
+      }
+     ReactDOM.render(<Parent />, document.getElementById("root"));
+    </script>
+</body>
+
+</html>

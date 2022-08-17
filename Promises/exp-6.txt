@@ -1,0 +1,21 @@
+write sql query to apply these commands Primary Key, Foreign Key, NOT NULL
+
+
+SQL> CREATE TABLE department(dept_code INT PRIMARY KEY, name 
+VARCHAR(15) NOT NULL, hod VARCHAR(15) NOT NULL);
+
+SQL> INSERT INTO deptment values(1, 'Akash', 'Punit saha');
+SQL> INSERT INTO deptment values(2, 'ankit', 'Roshan singh');
+SQL> INSERT INTO deptment values(3, 'arun', 'hari singh');
+SQL> INSERT INTO deptment values(4, 'harsh', 'Sumeet singh');
+SQL> INSERT INTO deptment values(5, 'rohit', 'Tony patel');
+
+SQL> CREATE TABLE emp(code INT PRIMARY KEY, name VARCHAR(20) 
+NOT NULL, salary DECIMAL,CONSTRAINT deptment_code FOREIGN KEY(code) 
+REFERENCES deptment(deptment_code));
+
+SQL> INSERT INTO emp VALUES(1, 'shruti', 17300);
+SQL> INSERT INTO emp VALUES(2, 'shiven', 12400);
+SQL> INSERT INTO emp VALUES(3, 'tanay', 15500);
+SQL> INSERT INTO emp VALUES(4, 'Mrinal', 18600);
+SQL> INSERT INTO emp VALUES(5, 'Subhesh', 19700);

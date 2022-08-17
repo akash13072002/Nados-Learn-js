@@ -1,0 +1,9 @@
+.SignupWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.SignupCard{
+    margin: 1%;
+    width: 26vw;
+}
