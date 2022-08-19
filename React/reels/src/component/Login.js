@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useContext } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -14,6 +15,7 @@ import img2 from '../Assets/img2.jpg'
 import img3 from '../Assets/img3.jpg'
 import img4 from '../Assets/img4.jpg'
 import img5 from '../Assets/img5.jpg'
+import { AuthContext } from '../Context/AuthContext';
 
 
 
@@ -28,6 +30,8 @@ import {formLabelClasses } from '@mui/material';
 import { Link } from 'react-router-dom';
 export default function Login() {
 
+    const test=useContext(AuthContext)
+    console.log(test)
 
     const useStyles = createUseStyles({
         text1: {

@@ -11,12 +11,13 @@ import 'firebase/compat/auth'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
+
     apiKey: "AIzaSyADPN2J8FbGZGdYMN5XxwkKtnu512UozkE",
-    authDomain: "reels-b5c42.firebaseapp.com",
-    projectId: "reels-b5c42",
-    storageBucket: "reels-b5c42.appspot.com",
-    messagingSenderId: "597199262282",
-    appId: "1:597199262282:web:fc3181360cb0a6c61c0cb3"
+  authDomain: "reels-b5c42.firebaseapp.com",
+  projectId: "reels-b5c42",
+  storageBucket: "reels-b5c42.appspot.com",
+  messagingSenderId: "597199262282",
+  appId: "1:597199262282:web:fc3181360cb0a6c61c0cb3"
   };
 
 // Initialize Firebase
