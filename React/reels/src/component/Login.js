@@ -100,7 +100,7 @@ export default function Login() {
                         <Typography variants='subtitle1' className={classes.text1}>
                             Sign up to see photos and videos from friends
                         </Typography>
-                        {true && <Alert severity="error">  This is an error alert — <strong>check it out!</strong></Alert>}
+                        {true  && <Alert severity="error">  This is an error alert — <strong>check it out!</strong></Alert>}
                         <TextField id="outlined-basic" label="E-mail" variant="outlined" margin='dense' fullWidth={true} size='small' />
                         <TextField id="outlined-basic" label="Password" variant="outlined" margin='dense' fullWidth={true} size='small' />
 
