@@ -4,6 +4,10 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 
+import {database , storage } from "../firbase";
+
+
+
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {createUseStyles} from 'react-jss'
@@ -52,11 +56,51 @@ const handleClick=async()=>{
        setTimeout (()=>{
         setError('')
        },2000) 
+       setLoading(false)
        return
     }
     try{
         let userObj=signup(email,password)
+        let uid = userObj.user.uid
         console.log(userObj)
+
+     const uploadImage=storage.ref(`/users/${uid}/profileImage`).put(file)
+       uploadImage.on('state_changed',fn1,fn2,fn3)
+
+       function fn1(snapshot){
+      let progress =(snapshot.bytesTransferred/snapshot.totalbytes)*100
+      console.log(`upload is ${progress} complete`)
+       }
+        
+       function fn2(){
+        setError('error') 
+        setTimeout (()=>{
+         setError('')
+        },2000) 
+        setLoading(false)
+        return ;
+       }
+    
+      function fn3(){
+  uploadImage.snapshot.ref.getDownloadURL().then((url)=>{
+  database.users.doc(uid).set({
+   email:email,
+   userId :uid,
+   fullname :name,
+   profileurl:url,
+   createdAt:database.getTimestamp()
+
+
+
+  })
+
+  })
+
+
+
+      }
+
+
     }
     catch(error){
 
@@ -99,7 +143,7 @@ const handleClick=async()=>{
             </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button variant="contained" fullWidth={true} onClick={handleClick}>Sign Up</Button>
+                        <Button variant="contained" fullWidth={true} disable={loading} onClick={handleClick}>Sign Up</Button>
                        
                     </CardActions>
                 </Card>
